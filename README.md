@@ -25,12 +25,12 @@ style="border-style: none;" alt="CC0" />
   <br />
   To the extent possible under law,
   <a rel="dct:publisher"
-     href="http://l2g.github.com">
+     href="http://l2g.github.io">
     <span property="dct:title">Lawrence Leonard Gilbert</span></a>
   has waived all copyright and related or neighboring rights to the
   <span property="dct:title">homebrew-L2G repository</span>.
 This work is published from:
 <span property="vcard:Country" datatype="dct:ISO3166"
-      content="US" about="http://l2g.github.com">
+      content="US" about="http://l2g.github.io">
   United States</span>.
 </p>
