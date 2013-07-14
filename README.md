@@ -6,11 +6,14 @@ Experimental formulæ for Homebrew (the missing OS X package manager)
 About
 -----
 
-This is a home for formulæ I'm writing for [Homebrew](http://brew.sh/).
+This is a "tap" for formulæ I'm writing for [Homebrew](http://brew.sh/).
 They should be considered highly experimental, so use at your own risk.
 
-Do feel free to use them, though, and let me know if you like them or have
-any suggestions.
+Do feel free to use them, though. You can do that in the usual way:
+
+    brew tap l2g/l2g
+
+Please let me know if you have comments, suggestions, etc.
 
 --Larry Gilbert (13 Jul 2013)
 
