@@ -16,6 +16,19 @@ class Pybitmessage < Formula
     system 'make', "PREFIX=#{prefix}", 'install'
   end
 
+  def caveats; <<-EOM
+    Bitmessage is a very experimental messaging protocol and may always have
+    undiscovered security issues.
+
+    Known security issues:
+
+    * 2013-08-22: several potential security issues including a broken proof of
+      work function and potential private key leaks; full details are at
+      http://secupost.net/446308138/bitmessage-security
+
+    EOM
+  end
+
 # test do
 #   # `test do` will create, run in and delete a temporary directory.
 #   #
