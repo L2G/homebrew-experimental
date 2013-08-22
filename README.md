@@ -1,5 +1,5 @@
-homebrew-L2G
-============
+homebrew-experimental
+=====================
 
 Experimental formulæ for Homebrew (the missing OS X package manager)
 
@@ -11,7 +11,7 @@ They should be considered highly experimental, so use at your own risk.
 
 Do feel free to use them, though. You can do that in the usual way:
 
-    brew tap l2g/l2g
+    brew tap l2g/experimental
 
 Please let me know if you have comments, suggestions, etc.
 
@@ -31,7 +31,7 @@ style="border-style: none;" alt="CC0" />
      href="http://l2g.github.io">
     <span property="dct:title">Lawrence Leonard Gilbert</span></a>
   has waived all copyright and related or neighboring rights to the
-  <span property="dct:title">homebrew-L2G repository</span>.
+  <span property="dct:title">homebrew-experimental repository</span>.
 This work is published from:
 <span property="vcard:Country" datatype="dct:ISO3166"
       content="US" about="http://l2g.github.io">
