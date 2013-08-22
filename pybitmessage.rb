@@ -8,7 +8,7 @@ class Pybitmessage < Formula
   url GITHUB_URL, :revision => '97df9e04f13c8450e62d97f0fe50d1264f39488b'
   head GITHUB_URL
 
-  depends_on :python
+  depends_on :python => '2.7.5'
   depends_on 'pyqt'
   depends_on 'openssl'
 
