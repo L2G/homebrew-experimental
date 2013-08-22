@@ -11,7 +11,7 @@ They should be considered highly experimental, so use at your own risk.
 
 Do feel free to use them, though. You can do that in the usual way:
 
-    brew tap l2g/experimental
+    brew tap L2G/experimental
 
 Please let me know if you have comments, suggestions, etc.
 
