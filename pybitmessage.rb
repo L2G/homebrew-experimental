@@ -8,12 +8,18 @@ class Pybitmessage < Formula
   url GITHUB_URL, :revision => '97df9e04f13c8450e62d97f0fe50d1264f39488b'
   head GITHUB_URL
 
+  option 'with-gevent', 'Also install gevent via pip (depends on libevent)'
+
   depends_on :python => '2.7.5'
   depends_on 'pyqt'
   depends_on 'openssl'
+  depends_on 'libevent' if build.with? 'gevent'
 
   def install
     system 'make', "PREFIX=#{prefix}", 'install'
+    if build.with? 'gevent'
+      python { system 'pip', 'install', 'gevent' }
+    end
   end
 
   def caveats; <<-EOM
