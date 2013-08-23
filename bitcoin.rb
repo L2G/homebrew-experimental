@@ -1,9 +1,5 @@
 require 'formula'
 
-# Documentation: https://github.com/mxcl/homebrew/wiki/Formula-Cookbook
-#                /usr/local/Library/Contributions/example-formula.rb
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
-
 class Bitcoin < Formula
   homepage 'http://www.bitcoin.org/'
   url 'https://github.com/bitcoin/bitcoin/archive/v0.8.3.tar.gz'
@@ -42,7 +38,7 @@ class Bitcoin < Formula
   end
 
   def install
-    system *%w( make -C src -f makefile.osx )  
+    system *%w( make -C src -f makefile.osx )
     system *%w( make -C src -f makefile.osx test )
     bin.install 'src/bitcoind'
 
