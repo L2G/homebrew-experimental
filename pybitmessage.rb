@@ -22,7 +22,7 @@ class Pybitmessage < Formula
     end
   end
 
-  def caveats; <<-EOM
+  def caveats; <<-EOM.undent
     Bitmessage is a very experimental messaging protocol and may have
     undiscovered security issues.
     EOM
