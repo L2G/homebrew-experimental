@@ -15,7 +15,7 @@ class Bitcoin < Formula
   end
   head 'https://github.com/bitcoin/bitcoin.git'
 
-  #option 'with-qt', 'Build the complete GUI app with Qt framework'
+  option 'with-qt', 'Also build the complete GUI app with Qt framework'
 
   depends_on :xcode
   depends_on :arch => :intel
@@ -24,7 +24,8 @@ class Bitcoin < Formula
   depends_on 'boost'
   depends_on 'miniupnpc'
   depends_on 'openssl'
-  #depends_on 'qt' => :optional
+  depends_on 'qt' => :optional
+  depends_on 'protobuf' if build.with? 'qt'
 
   def patches
     if build.head?
@@ -43,8 +44,13 @@ class Bitcoin < Formula
   def install
     system *%w( make -C src -f makefile.osx )  
     system *%w( make -C src -f makefile.osx test )
-
     bin.install 'src/bitcoind'
+
+    if build.with? 'qt'
+      system 'qmake', 'bitcoin-qt.pro'
+      system 'make'
+      prefix.install 'Bitcoin-Qt.app'
+    end
   end
 
   test do
