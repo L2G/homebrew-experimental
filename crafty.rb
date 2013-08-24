@@ -1,11 +1,14 @@
 # Homebrew formula for Crafty
 # by Lawrence Leonard Gilbert (13 Jul 2013)
 # dedicated to the public domain
+#
+# TODO:
+# * Test(s)
+# * Install the opening-moves book
+# * Install help
+# * Determine number of cores and configure appropriately
 
 require 'formula'
-
-# Documentation: https://github.com/mxcl/homebrew/wiki/Formula-Cookbook
-# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 
 class Crafty < Formula
   homepage 'http://www.craftychess.com/'
