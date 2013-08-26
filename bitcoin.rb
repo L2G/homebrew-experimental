@@ -1,7 +1,7 @@
 require 'formula'
 
 class Bitcoin < Formula
-  homepage 'http://www.bitcoin.org/'
+  homepage 'http://bitcoin.org/'
   url 'https://github.com/bitcoin/bitcoin/archive/v0.8.3.tar.gz'
   sha1 '95060faee242f3ff6d1e91fd302c89e6f67cf1b1'
   devel do
