@@ -9,14 +9,14 @@ class Musescore < Formula
   homepage 'http://musescore.org/'
   head 'https://github.com/musescore/MuseScore.git', :revision => HEAD_REVISION
 
-  depends_on 'cmake'
-  depends_on 'git'
+  depends_on 'cmake' => :build
+  depends_on 'pkg-config' => :build
+
   depends_on 'jack'
   depends_on 'lame'
   depends_on 'libogg'
   depends_on 'libsndfile'
   depends_on 'libvorbis'
-  depends_on 'pkg-config'
   depends_on 'portaudio'
   depends_on 'qt5'
 
