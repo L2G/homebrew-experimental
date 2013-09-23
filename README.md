@@ -6,8 +6,10 @@ Experimental formulæ for Homebrew (the missing OS X package manager)
 About
 -----
 
-This is a "tap" for formulæ I'm writing for [Homebrew](http://brew.sh/).
-They should be considered highly experimental, so use at your own risk.
+This is a ["tap"](https://github.com/mxcl/homebrew/wiki/brew-tap) for
+[Homebrew](http://brew.sh/) formulæ I'm developing.  Some are new creations,
+while others are experimental changes to existing formulæ.  All should be
+considered _highly_ experimental, so use at your own risk.
 
 Do feel free to use them, though. You can do that in the usual way:
 
@@ -15,7 +17,7 @@ Do feel free to use them, though. You can do that in the usual way:
 
 Please let me know if you have comments, suggestions, etc.
 
---Larry Gilbert (13 Jul 2013)
+--Larry Gilbert (23 Sep 2013)
 
 ----
 <p xmlns:dct="http://purl.org/dc/terms/"
