@@ -9,9 +9,8 @@ class Riak < Formula
 
   # Constants for use in this formula's plist
   SOFT_FILE_LIMIT = 4096
-  START_CMD       = %w( /usr/local/bin/riak start )
 
-  plist_options :manual => START_CMD.join(' ')
+  plist_options :manual => 'riak start'
 
   def install
     ENV.deparallelize
@@ -32,7 +31,8 @@ class Riak < Formula
         <string>#{plist_name}</string>
         <key>ProgramArguments</key>
         <array>
-          #{START_CMD.map { |s| "<string>#{s}</string>" }}
+          <string>#{opt_prefix}/bin/riak</string>
+          <string>start</string>
         </array>
         <key>SoftResourceLimits</key>
         <dict>
