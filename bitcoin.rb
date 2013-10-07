@@ -2,13 +2,8 @@ require 'formula'
 
 class Bitcoin < Formula
   homepage 'http://bitcoin.org/'
-  url 'https://github.com/bitcoin/bitcoin/archive/v0.8.3.tar.gz'
-  sha1 '95060faee242f3ff6d1e91fd302c89e6f67cf1b1'
-  devel do
-    version '0.8.4rc2'
-    url 'https://github.com/bitcoin/bitcoin/archive/v0.8.4rc2.tar.gz'
-    sha1 '43a9f42e6153dfa83ece0f01742349233c5f79b7'
-  end
+  url 'https://github.com/bitcoin/bitcoin/archive/v0.8.5.tar.gz'
+  sha1 'a2d771deca2267a6c08223b3cd8499a115b0239f'
   head 'https://github.com/bitcoin/bitcoin.git'
 
   option 'with-qt', 'Also build the complete GUI app with Qt framework'
