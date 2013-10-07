@@ -7,14 +7,11 @@ class Terminator < Formula
   sha256 '9131847023fa22f11cf812f6ceff51b5d66d140b6518ad41d7fa8b0742bfd3f7'
   head 'bzr://lp:terminator'
 
-  depends_on :x11 # if your formula requires any X11/XQuartz components
   depends_on :python
-  depends_on 'bazaar' => :build
+  depends_on 'bazaar' => :build if build.head?
   depends_on 'gettext' => :build
   depends_on 'intltool' => :build
-  depends_on 'pygobject'
-  depends_on 'pygtk'
-  depends_on 'vte' => 'with-python'
+  depends_on 'l2g/experimental/vte' => 'with-python'
 
   def install
     python { system python, "setup.py", "install", "--prefix=#{prefix}" }
