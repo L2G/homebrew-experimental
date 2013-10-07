@@ -17,14 +17,6 @@ class Terminator < Formula
     python { system python, "setup.py", "install", "--prefix=#{prefix}" }
   end
 
-  def caveats; <<-EOM.undent
-    This formula requires Python bindings to vte, which are not supported by
-    the vte formula in Homebrew's main repo at this time. Install them with:
-
-        brew install L2G/experimental/vte --with-python
-    EOM
-  end
-    
   test do
     # `test do` will create, run in and delete a temporary directory.
     #
