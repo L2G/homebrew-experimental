@@ -2,8 +2,8 @@ require 'formula'
 
 class Vte < Formula
   homepage 'http://developer.gnome.org/vte/'
-  url 'http://ftp.gnome.org/pub/gnome/sources/vte/0.28/vte-0.28.0.tar.bz2'
-  sha1 '49b66a0346da09c72f59e5c544cc5b50e7de9bc1'
+  url 'http://ftp.gnome.org/pub/gnome/sources/vte/0.28/vte-0.28.2.tar.xz'
+  sha256 '86cf0b81aa023fa93ed415653d51c96767f20b2d7334c893caba71e42654b0ae'
 
   option 'with-python', 'Build with Python bindings'
 
