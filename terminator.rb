@@ -12,6 +12,7 @@ class Terminator < Formula
   depends_on 'gettext' => :build
   depends_on 'intltool' => :build
   depends_on 'l2g/experimental/vte' => 'with-python'
+  depends_on 'hicolor-icon-theme'
 
   def install
     python { system python, "setup.py", "install", "--prefix=#{prefix}" }
