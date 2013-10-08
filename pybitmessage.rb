@@ -1,12 +1,11 @@
 require 'formula'
 
 class Pybitmessage < Formula
-  GITHUB_URL = 'https://github.com/Bitmessage/PyBitmessage.git'
 
   homepage 'https://bitmessage.org/wiki/Main_Page'
-  version '0.3.5'
-  url GITHUB_URL, :revision => '97df9e04f13c8450e62d97f0fe50d1264f39488b'
-  head GITHUB_URL
+  url 'https://github.com/Bitmessage/PyBitmessage/archive/v0.4.1.tar.gz'
+  sha1 '23c0d7e4d01d5e68bf65ce86136d3a278383646a'
+  head 'https://github.com/Bitmessage/PyBitmessage.git'
 
   option 'with-gevent', 'Also install gevent via pip (depends on libevent)'
 
