@@ -14,7 +14,7 @@ class Qt5 < Formula
 
   head 'git://gitorious.org/qt/qt5.git', :branch => 'stable'
 
-  keg_only "Qt 5 conflicts Qt 4 (which is currently much more widely used)."
+  keg_only "Qt 5 conflicts with Qt 4 (which is currently much more widely used)."
 
   option :universal
   option 'developer', 'Build and link with developer options'
@@ -101,8 +101,8 @@ class Qt5 < Formula
   end
 
   def caveats; <<-EOS.undent
-    We agreed to the Qt opensource license for you.
-    If this is unacceptable you should uninstall.
+    Installation automatically agrees to the Qt opensource license for you.
+    If this is unacceptable, you should uninstall (or avoid installing).
     EOS
   end
 end
