@@ -23,11 +23,11 @@ class Qt5 < Formula
   depends_on "mysql" => :optional
 
   # Renamed option
-  odie 'qt5: --with-qtdbus has been renamed to --with-d-bus' if ARGV.include? '--with-qtdbus'
+  odie 'qt5: --with-qtdbus has been renamed to --with-d-bus' if build.include? 'with-qtdbus'
 
   # Retired options
-  %w( --with-demos-examples --with-debug-and-release --with-docs ).each do |o|
-    odie "qt5: #{o} is no longer supported" if ARGV.include? o
+  %w( with-demos-examples with-debug-and-release with-docs ).each do |o|
+    odie "qt5: --#{o} is no longer supported" if build.include? o
   end
 
   def install
