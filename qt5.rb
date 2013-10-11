@@ -18,6 +18,8 @@ class Qt5 < Formula
 
   option :universal
   option 'developer', 'Build and link with developer options'
+  option 'force-c++11', 'Explicitly choose to link to C++11 library'
+  option 'force-no-c++11', 'Explicitly refuse to link to C++11 library'
 
   depends_on "d-bus" => :optional
   depends_on "mysql" => :optional
@@ -30,6 +32,12 @@ class Qt5 < Formula
     odie "qt5: --#{o} is no longer supported" if build.include? o
   end
 
+  # C++11 options
+  if build.include? 'force-c++11' and build.include? 'force-no-c++11'
+    odie "#{name}: Please choose between --force-c++11 and --force-no-c++11 (or " \
+         "don't use either)!"
+  end
+
   def install
     ENV.universal_binary if build.universal?
     args = ["-prefix", prefix,
@@ -37,6 +45,18 @@ class Qt5 < Formula
             "-confirm-license", "-opensource",
             "-nomake", "examples",
             "-release"]
+
+    if build.with? 'c++11'
+      ohai "#{name}: Explicitly linking to C++11 library (hope you know what " \
+           "you're doing!)"
+      args << '-c++11'
+    end
+
+    if build.without? 'c++11'
+      ohai "#{name}: Explicitly refusing to link to C++11 library (hope you know " \
+           "what you're doing!)"
+      args << '-no-c++11'
+    end
 
     unless MacOS::CLT.installed?
       # ... too stupid to find CFNumber.h, so we give a hint:
