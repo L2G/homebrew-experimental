@@ -5,7 +5,18 @@ class Riak < Formula
   url 'http://s3.amazonaws.com/downloads.basho.com/riak/1.4/1.4.2/riak-1.4.2.tar.gz'
   sha256 '6a1fdcfc1f3f0357eeb377ead6638db4187379e3b40121cef16b517e03c6fd11'
 
-  depends_on 'erlang-r15' # R16 is too new for 1.4.2
+  devel do
+    url 'http://s3.amazonaws.com/downloads.basho.com/riak/2.0/2.0.0pre5/' \
+          'riak-2.0.0pre5.tar.gz'
+    sha256 'fcb21597251ca0c1fea368a6709c34f5f900b0c4c292be5388fddfc5c310d367'
+    version '2.0.0-pre5'
+  end
+
+  if build.devel?
+    depends_on 'erlang'
+  else
+    depends_on 'erlang-r15' # R16 is too new for 1.4.2
+  end
 
   # Constants for use in this formula's plist
   SOFT_FILE_LIMIT = 4096
