@@ -12,8 +12,11 @@ class Riak < Formula
     version '2.0.0-pre5'
   end
 
-  if build.devel?
+  head 'https://github.com/basho/riak.git', :branch => 'develop'
+
+  if build.devel? || build.head?
     depends_on 'erlang'
+    depends_on 'solr'
   else
     depends_on 'erlang-r15' # R16 is too new for 1.4.2
   end
