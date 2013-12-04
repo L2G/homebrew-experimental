@@ -9,14 +9,23 @@ class R < Formula
   url 'http://ftp.osuosl.org/pub/cran/src/base/R-3/R-3.0.2.tar.gz'
   sha1 'f5d9daef00e09d36a465ff7b0bf4cab136bea227'
 
-  # depends_on 'cmake' => :build
   depends_on :x11 => :recommended
+  depends_on :cairo => :recommended
   depends_on :fortran
 
   def install
-    config_options = ['--without-recommended-packages',
-                      '--disable-R-framework',
-                      "--prefix=#{prefix}"]
+    config_options = %W[
+      --without-recommended-packages
+      --disable-R-framework
+      --prefix=#{prefix}
+    ]
+
+    # Options that can be passed through to configure, verbatim
+    %w[ without-cairo ].each do |opt|
+      config_options.unshift("--#{opt}") if build.include?(opt)
+    end
+
+    # Other options that have to be massaged
     config_options.unshift('--without-x') if build.without?(:x11)
 
     system './configure', *config_options
