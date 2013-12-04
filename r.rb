@@ -10,14 +10,16 @@ class R < Formula
   sha1 'f5d9daef00e09d36a465ff7b0bf4cab136bea227'
 
   # depends_on 'cmake' => :build
-  depends_on :x11 # if your formula requires any X11/XQuartz components
+  depends_on :x11 => :recommended
   depends_on :fortran
 
   def install
-    # Remove unrecognized options if warned by configure
-    system './configure', '--without-recommended-packages',
-                          '--disable-R-framework',
-                          "--prefix=#{prefix}"
+    config_options = ['--without-recommended-packages',
+                      '--disable-R-framework',
+                      "--prefix=#{prefix}"]
+    config_options.unshift('--without-x') if build.without?(:x11)
+
+    system './configure', *config_options
     system 'make'
     system 'make', 'install'
   end
