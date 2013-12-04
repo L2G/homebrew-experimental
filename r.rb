@@ -16,9 +16,7 @@ class R < Formula
   def install
     # Remove unrecognized options if warned by configure
     system './configure', '--without-recommended-packages',
-                          '--disable-debug',
-                          '--disable-dependency-tracking',
-                          '--disable-silent-rules',
+                          '--disable-R-framework',
                           "--prefix=#{prefix}"
     system 'make'
     system 'make', 'install'
