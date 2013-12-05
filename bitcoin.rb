@@ -4,6 +4,13 @@ class Bitcoin < Formula
   homepage 'http://bitcoin.org/'
   url 'https://github.com/bitcoin/bitcoin/archive/v0.8.5.tar.gz'
   sha1 'a2d771deca2267a6c08223b3cd8499a115b0239f'
+
+  devel do
+    url 'https://github.com/bitcoin/bitcoin/archive/v0.8.6rc1.tar.gz'
+    version '0.8.6rc1'
+    sha1 '8bd8354a916dfda9249a2b7679f459a906bee9e9'
+  end
+
   head 'https://github.com/bitcoin/bitcoin.git'
 
   option 'with-qt', 'Also build the complete GUI app with Qt framework'
