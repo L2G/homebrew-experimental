@@ -12,6 +12,7 @@ class R < Formula
   depends_on :x11 => :recommended
   depends_on :cairo => :recommended
   depends_on :fortran
+  depends_on 'pkg-config' => :build
 
   def install
     config_options = %W[
