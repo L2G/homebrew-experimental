@@ -40,7 +40,7 @@ class Litecoin < Formula
     bin.install 'src/litecoind'
 
     if build.with? 'qt'
-      system 'qmake', 'litecoin-qt.pro'
+      system 'qmake', 'bitcoin-qt.pro' #-- sic
       system 'make'
       prefix.install 'Litecoin-Qt.app'
     end
