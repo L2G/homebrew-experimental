@@ -17,7 +17,20 @@ Do feel free to use them, though. You can do that in the usual way:
 
 Please let me know if you have comments, suggestions, etc.
 
---Larry Gilbert (23 Sep 2013)
+
+Highlights
+----------
+
+These formulæ are more stable than the others, and I use them
+regularly myself:
+
+* __[bitcoin](https://github/com/bitcoin/bitcoin):__
+  The premier Bitcoin implementation. Install with
+  `brew install bitcoin --with-qt` if you want the complete app with GUI.
+  `--devel` and `--HEAD` are available.
+* __[terminator](https://launchpad.net/terminator):__
+  A tiling terminal emulator for GNOME. `--HEAD` is available.
+
 
 ----
 <p xmlns:dct="http://purl.org/dc/terms/"
