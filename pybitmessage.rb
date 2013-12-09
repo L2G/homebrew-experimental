@@ -24,6 +24,11 @@ class Pybitmessage < Formula
   def caveats; <<-EOM.undent
     Bitmessage is a very experimental messaging protocol and may have
     undiscovered security issues.
+
+    Changes made in the HEAD version are likely to rewrite data files and
+    make them incompatible with the latest release version!  If you are
+    upgrading to HEAD, back up your PyBitmessage files first; if you don't
+    know how to back them up, don't upgrade to HEAD!
     EOM
   end
 
