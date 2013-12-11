@@ -24,7 +24,7 @@ Highlights
 These formulæ are more stable than the others, and I use them
 regularly myself:
 
-* __[bitcoin](https://github/com/bitcoin/bitcoin):__
+* __[bitcoin](https://github.com/bitcoin/bitcoin):__
   The premier Bitcoin implementation. Install with
   `brew install bitcoin --with-qt` if you want the complete app with GUI.
   `--devel` and `--HEAD` are available.
