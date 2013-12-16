@@ -11,37 +11,46 @@ class Bitcoin < Formula
 
   depends_on :xcode
   depends_on :arch => :intel
+  depends_on :autoconf => :build if build.head?
+  depends_on 'pkg-config' => :build
 
   depends_on 'berkeley-db4'
   depends_on 'boost'
   depends_on 'miniupnpc'
   depends_on 'openssl'
   depends_on 'qt' => :optional
-  depends_on 'protobuf' if build.with? 'qt'
+  depends_on 'protobuf' if (build.with? 'qt' or build.head?)
 
   def patches
-    if build.head?
-      { :p1 => [
-          'contrib/homebrew/bitcoin.qt.pro.patch',
-          'contrib/homebrew/makefile.osx.patch'
-        ]
-      }
-    else
-      # Tagged releases all seem to have broken OS X patches included, so
-      # they have been reworked for this formula.
-      DATA
-    end
+    DATA unless build.head?
   end
 
   def install
-    system *%w( make -C src -f makefile.osx )
-    system *%w( make -C src -f makefile.osx test )
-    bin.install 'src/bitcoind'
-
-    if build.with? 'qt'
-      system 'qmake', 'bitcoin-qt.pro'
+    if build.head?
+      # New GNU-style build. Yay!
+      system './autogen.sh'
+      system './configure', '--disable-debug',
+                            '--disable-dependency-tracking',
+                            "--prefix=#{prefix}"
       system 'make'
-      prefix.install 'Bitcoin-Qt.app'
+      system 'make', 'check'
+      system 'make', 'install'
+
+      if build.with? 'qt'
+        system 'make', 'appbundle'
+        prefix.install 'Bitcoin-Qt.app'
+      end
+
+    else
+      system *%w( make -C src -f makefile.osx )
+      system *%w( make -C src -f makefile.osx test )
+      bin.install 'src/bitcoind'
+
+      if build.with? 'qt'
+        system 'qmake', 'bitcoin-qt.pro'
+        system 'make'
+        prefix.install 'Bitcoin-Qt.app'
+      end
     end
   end
 
