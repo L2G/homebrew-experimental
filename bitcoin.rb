@@ -2,14 +2,8 @@ require 'formula'
 
 class Bitcoin < Formula
   homepage 'http://bitcoin.org/'
-  url 'https://github.com/bitcoin/bitcoin/archive/v0.8.5.tar.gz'
-  sha1 'a2d771deca2267a6c08223b3cd8499a115b0239f'
-
-  devel do
-    url 'https://github.com/bitcoin/bitcoin/archive/v0.8.6rc1.tar.gz'
-    version '0.8.6rc1'
-    sha1 '8bd8354a916dfda9249a2b7679f459a906bee9e9'
-  end
+  url 'https://github.com/bitcoin/bitcoin/archive/v0.8.6.tar.gz'
+  sha1 '6947ef865e82f3952abc9fc2b112f6b15821bfe3'
 
   head 'https://github.com/bitcoin/bitcoin.git'
 
