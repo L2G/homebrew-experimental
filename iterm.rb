@@ -6,6 +6,9 @@ class Iterm < Formula
   version '1.0.0.20131228'
   sha1 '36eaf9d38c20ffbb4c68502003933c05c3206b43'
 
+  head 'https://github.com/gnachman/iTerm2.git'
+  depends_on :macos => :mountain_lion if build.head?
+
   # depends_on 'cmake' => :build
   depends_on :x11 # if your formula requires any X11/XQuartz components
 
@@ -13,6 +16,10 @@ class Iterm < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
     system 'make', 'Deployment'
     prefix.install 'build/Deployment/iTerm.app'
+  end
+
+  def caveats
+    'HEAD builds have not been tested.'
   end
 
   test do
