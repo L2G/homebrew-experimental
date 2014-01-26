@@ -2,9 +2,8 @@ require 'formula'
 
 class Litecoin < Formula
   homepage 'http://litecoin.org/'
-  url 'https://github.com/litecoin-project/litecoin/archive/v0.8.6.1.tar.gz'
-  sha1 '0c35da5b981765fab6d5b54990e1eb22a413e183'
-  sha256 '8aef9e936b57b90d506c5dd2e350c3d0673640b69beb9975d172136eec1d8b34'
+  url 'https://github.com/litecoin-project/litecoin/archive/v0.8.6.2.tar.gz'
+  sha256 '724d4729f869337a334a95f72acceca815531dcce906c92a76e7686a75235c97'
 
   head 'https://github.com/litecoin-project/litecoin.git'
 
