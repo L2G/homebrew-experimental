@@ -5,6 +5,12 @@ class Bitcoin < Formula
   url 'https://github.com/bitcoin/bitcoin/archive/v0.8.6.tar.gz'
   sha1 '6947ef865e82f3952abc9fc2b112f6b15821bfe3'
 
+  devel do
+    version '0.9.0rc1'
+    url 'https://github.com/bitcoin/bitcoin/archive/v0.9.0rc1.tar.gz'
+    sha1 '68a6c0a0caf1c55e82733d27d8e28c7c2bb20d62'
+  end
+
   head 'https://github.com/bitcoin/bitcoin.git'
 
   option 'with-qt', 'Also build the complete GUI app with Qt framework'
@@ -19,14 +25,14 @@ class Bitcoin < Formula
   depends_on 'miniupnpc'
   depends_on 'openssl'
   depends_on 'qt' => :optional
-  depends_on 'protobuf' if (build.with? 'qt' or build.head?)
+  depends_on 'protobuf' if (build.with? 'qt' or !build.stable?)
 
   def patches
-    DATA unless build.head?
+    DATA if build.stable?
   end
 
   def install
-    if build.head?
+    unless build.stable?
       # New GNU-style build. Yay!
       system './autogen.sh'
       system './configure', '--disable-debug',
@@ -62,6 +68,7 @@ class Bitcoin < Formula
     # were more thorough. Run the test with `brew test bitcoin`.
     system "false"
   end
+
 end
 
 __END__
