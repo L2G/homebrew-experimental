@@ -4,13 +4,14 @@ class Powerline < Formula
   homepage 'https://github.com/Lokaltog/powerline'
   head 'https://github.com/Lokaltog/powerline.git'
 
-  depends_on :python
   depends_on :python3 => :optional
 
   def install
-    system python, "setup.py", "install", "--prefix=#{prefix}",
-                                          "--single-version-externally-managed",
-                                          "--record=installed.txt"
+    system (build.with?('python3') ? 'python3' : 'python'),
+           "setup.py", "install",
+                         "--prefix=#{prefix}",
+                         "--single-version-externally-managed",
+                         "--record=installed.txt"
   end
 
   test do
