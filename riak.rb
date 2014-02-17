@@ -2,8 +2,8 @@ require 'formula'
 
 class Riak < Formula
   homepage 'http://basho.com/riak/'
-  url 'http://s3.amazonaws.com/downloads.basho.com/riak/1.4/1.4.2/riak-1.4.2.tar.gz'
-  sha256 '6a1fdcfc1f3f0357eeb377ead6638db4187379e3b40121cef16b517e03c6fd11'
+  url 'http://s3.amazonaws.com/downloads.basho.com/riak/1.4/1.4.7/riak-1.4.7.tar.gz'
+  sha256 '3107a7faeb7b0ffbbc8ffff0f31555541fdecbb812f65b7c2cbeabb860df438f'
 
   devel do
     url 'http://s3.amazonaws.com/downloads.basho.com/riak/2.0/2.0.0pre5/' \
@@ -18,7 +18,7 @@ class Riak < Formula
     depends_on 'erlang'
     depends_on 'solr'
   else
-    depends_on 'erlang-r15' # R16 is too new for 1.4.2
+    depends_on 'erlang-r15' # R16 is too new for 1.4.x
   end
 
   # Constants for use in this formula's plist
