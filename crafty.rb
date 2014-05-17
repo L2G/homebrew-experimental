@@ -10,13 +10,11 @@
 require 'formula'
 
 class Crafty < Formula
+  # Look for newer versions at http://www.cis.uab.edu/hyatt/crafty/source/?C=M;O=D
+  # because the home page may not be up-to-date
   homepage 'http://www.craftychess.com/'
-  url 'http://www.craftychess.com/crafty-23.4.zip'
-  sha1 '383079c0f99f133faa541d1949f6be4f67101f3f'
-
-  def patches
-    DATA
-  end
+  url 'http://www.cis.uab.edu/hyatt/crafty/source/crafty-23.8.zip'
+  sha1 '662ae1f97727eacfae0cff0a8e6449a45178648d'
 
   def install
     system 'make', 'darwin'
@@ -27,18 +25,3 @@ class Crafty < Formula
     system 'crafty end'
   end
 end
-
-__END__
-
-diff -ru crafty-23.4.orig/chess.h crafty-23.4/chess.h
---- crafty-23.4.orig/chess.h	2010-11-08 10:07:43.000000000 -0800
-+++ crafty-23.4/chess.h	2013-06-13 23:45:51.000000000 -0700
-@@ -25,7 +25,7 @@
- #include <assert.h>
- #include <stdlib.h>
- #if !defined(IPHONE)
--#  include <malloc.h>
-+#  include <malloc/malloc.h>
- #endif
- #include <string.h>
- #if !defined(TYPES_INCLUDED)
