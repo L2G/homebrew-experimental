@@ -24,12 +24,8 @@ Highlights
 These formulæ are more stable than the others, and I use them
 regularly myself:
 
-* __[bitcoin](https://github.com/bitcoin/bitcoin):__
-  The premier Bitcoin implementation. Install with
-  `brew install bitcoin --with-qt` if you want the complete app with GUI.
-  `--devel` and `--HEAD` are available.
-* __[terminator](https://launchpad.net/terminator):__
-  A tiling terminal emulator for GNOME. `--HEAD` is available.
+* __[iterm2](http://www.iterm2.com/):__
+  A great tiling terminal emulator for Mac OS X.
 
 
 ----
