@@ -14,7 +14,6 @@ class Iterm2 < Formula
   depends_on :x11
 
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
     system 'make', 'Deployment'
     prefix.install 'build/Deployment/iTerm.app'
   end
