@@ -20,7 +20,10 @@ class Iterm2 < Formula
   end
 
   def caveats
-    'HEAD builds have not been tested.'
+    <<-EOS.undent
+      HEAD builds are known to fail. If you can fix it, please fork and file a
+      pull request!
+    EOS
   end
 
   test do
