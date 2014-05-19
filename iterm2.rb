@@ -11,6 +11,7 @@ class Iterm2 < Formula
   conflicts_with 'iterm', :because => 'This supersedes the "iterm" brew.'
 
   depends_on :macos => (build.head? ? :mountain_lion : :snow_leopard)
+  depends_on :xcode
   depends_on :x11
 
   def install
