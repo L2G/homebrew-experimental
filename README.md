@@ -18,16 +18,6 @@ Do feel free to use them, though. You can do that in the usual way:
 Please let me know if you have comments, suggestions, etc.
 
 
-Highlights
-----------
-
-These formulæ are more stable than the others, and I use them
-regularly myself:
-
-* __[iterm2](http://www.iterm2.com/):__
-  A great tiling terminal emulator for Mac OS X.
-
-
 ----
 <p xmlns:dct="http://purl.org/dc/terms/"
 xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
