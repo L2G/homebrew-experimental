@@ -11,11 +11,11 @@ class Crafty < Formula
   # Look for newer versions at http://www.cis.uab.edu/hyatt/crafty/source/?C=M;O=D
   # because the home page may not be up-to-date
   homepage "http://www.craftychess.com/"
-  url "http://www.cis.uab.edu/hyatt/crafty/source/crafty-23.8.zip"
-  sha256 "01c3c34125e43dcdba9015d8b31f0e2c46a58d792e8eefc0b75ca3ec6b294e14"
+  url "http://www.cis.uab.edu/hyatt/crafty/source/crafty-24.1.zip"
+  sha256 "a29d25d9a26a5a958f07a075d1f76f52c12d287ad16ee7aadb224a0dfee40659"
 
   def install
-    system "make", "darwin"
+    system "make", "quick"
     bin.install "crafty"
   end
 
