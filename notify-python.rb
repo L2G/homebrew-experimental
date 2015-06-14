@@ -13,7 +13,7 @@ class NotifyPython < Formula
   depends_on 'pkg-config' => :build
   depends_on 'pygtk'
   depends_on 'pygobject'
-  depends_on 'libnotify'
+  depends_on 'l2g/experimental/libnotify'
 
   def install
     # Remove unrecognized options if warned by configure
