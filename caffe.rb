@@ -56,7 +56,7 @@ class Caffe < Formula
   depends_on "lmdb"
   depends_on "openblas" => :optional
   depends_on CudaRequirement => :optional
-  depends_on "opencv3"
+  depends_on "opencv"
   depends_on "protobuf"
   depends_on "snappy"
   depends_on "szip"
