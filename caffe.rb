@@ -20,7 +20,7 @@ class Caffe < Formula
 
   # homebrew/science deps
   depends_on "homebrew/science/hdf5"
-  depends_on "homebrew/science/opencv3"
+  depends_on "homebrew/science/opencv"
 
   def install
     system "cmake", ".", *std_cmake_args
