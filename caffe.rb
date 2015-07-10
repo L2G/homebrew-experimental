@@ -12,6 +12,7 @@ class Caffe < Formula
   depends_on "glog"
   depends_on "leveldb"
   depends_on "lmdb"
+  depends_on "protobuf"
   depends_on "snappy"
 
   # homebrew/python deps
